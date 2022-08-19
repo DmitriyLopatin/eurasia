@@ -2,17 +2,16 @@ section{
     padding: 5vw 0;
 }
 .hero {
-    position: relative;
-    height: fit-content;
     display: flex;
     align-items: center;
-    left: 50vw;
+    justify-content: space-around;
+    padding-left: 8.33vw;
     img{
-        width: 63vw;
+        width: 63vw;  
+        position: relative;
+        right: -14vw;
     }
     &-text {
-        position: absolute;
-        left: -41vw;
         max-width: 28.1vw;
         h1 {
             font-size: 3vw;
