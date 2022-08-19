@@ -1,0 +1,122 @@
+section{
+    padding: 5vw 0;
+}
+.hero {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    left: 50vw;
+    img{
+        width: 63vw;
+    }
+    &-text {
+        position: absolute;
+        left: -41vw;
+        max-width: 28.1vw;
+        h1 {
+            font-size: 3vw;
+            font-family: $pt;
+            color: $green;
+            line-height: 4vw;
+            letter-spacing: 0.2vw;
+            span {
+                color: $black;
+            }
+        }
+        p,li {
+            font-size: 0.94vw;
+            line-height: 1.7vw;
+            margin-top: 0.7vw;
+        }
+        ul{
+            padding-left: 1.5vw;
+            margin-top: 0.7vw;
+        }
+    }
+   
+}
+.digits{
+    p{
+        font-family: $pt;
+        font-size: 2.5vw;
+        text-align: center;
+        span{
+            color: $green;
+        }
+    }
+    &-content{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 3vw;
+    }
+    &-item{
+        width: 50%;
+        padding: 5vw 0 3vw;
+        &:nth-child(2n+1){
+            background-color: #6eb63c;
+        }
+        &:nth-child(2n){
+            background-color: #c7d30a;
+        }
+        &__borderTop{
+            border-top: 1px solid #FFF8EE33;
+            ;
+        }
+        & &__title{
+            color: white;
+            font-size: 5vw;
+        }
+        & &__titleDescription{
+            color: white;
+            font-size: 1vw;
+        }
+
+    }
+}
+.solutions{
+    &__title{
+        font-family: $pt;
+        font-size: 2.5vw;
+        text-align: center;
+        color: #333333;
+    }
+    &__text{
+        display: flex;
+        justify-content: center;
+        margin-top: 1.3vw;
+        p{
+            max-width: 27vw;
+            text-align: center;
+            font-size: 1vw;
+            line-height: 1.6vw;  
+        }
+    }
+    &__content{
+        margin: 3.6vw auto;
+        max-width: 59vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        grid-column-gap: 9.9vw;
+    }
+    &__item{
+        padding: 1vw;
+        display: flex;
+        max-width: 24.4vw;
+        grid-column-gap: 1vw;
+        align-items: center;
+        margin-bottom: 2.6vw;
+        &--title{
+            font-family: $pt;
+            color: $green;
+            font-size: 5vw;
+            line-height: 6vw;
+        }
+        &--titleDescription{
+            font-size: 0.9vw;
+            color:#333333DE;
+            
+        }
+    }
+}
