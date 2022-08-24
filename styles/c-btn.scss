@@ -1,0 +1,25 @@
+.c-btn {
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+.c-btn-outline-green{
+    background-color: transparent;
+    color: $green;
+    border: 1px solid $green;
+    transition: $transition;
+}
+.c-btn-outline-black{
+    background-color: transparent;
+    color: $black;
+    border: 1px solid $black;
+}
+
+.c-btn-filled-green{
+    border-color: transparent;
+    background-color: $green;
+    color: white;
+}

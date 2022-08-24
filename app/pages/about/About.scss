@@ -1,43 +1,48 @@
-section{
-    padding: 5vw 0;
+
+.hero-container{
+    display: flex;
+    align-items: center;  
+    
 }
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 8.33vw;
-    overflow: hidden;
-    img{
-        width: 63vw;  
-        position: relative;
-        right: -14vw;
-    }
+   overflow-x: hidden;
+   img{
+    transform: scale(1.5);
     &-text {
-        max-width: 28.1vw;
+        // min-width: 485px;
+        // max-width: 486px;
+        // margin: 0 48px 0 11vw;
         h1 {
-            font-size: 3vw;
-            font-family: $pt;
-            color: $green;
-            line-height: 4vw;
-            letter-spacing: 0.2vw;
+            // font-size: 48px;
+            // font-family: $pt;
+            // color: $green;
+            // line-height: 57px;
+            letter-spacing: 1px;
             span {
                 color: $black;
             }
         }
-        p,li {
-            font-size: 0.94vw;
-            line-height: 1.7vw;
-            margin-top: 0.7vw;
+        p {
+            font-size: 16px;
+            line-height: 28px;
+            margin-top: 16px;
+        }
+        li{
+            font-size: 16px;
+            line-height: 32px;
         }
         ul{
-            padding-left: 1.5vw;
-            margin-top: 0.7vw;
+            padding-left: 30px;
+            margin-top: 16px;
         }
     }
-   
+    }
+    @media screen {
+        
+    }
 }
 .digits{
-    p{
+    &-heading{
         font-family: $pt;
         font-size: 2.5vw;
         text-align: center;
@@ -48,11 +53,12 @@ section{
     &-content{
         display: flex;
         flex-wrap: wrap;
-        padding-top: 3vw;
+        padding-top: 24px;
     }
     &-item{
+        font-family: 'Inter';
         width: 50%;
-        padding: 5vw 0 3vw;
+        // padding: 5vw 0 3vw;
         &:nth-child(2n+1){
             background-color: #6eb63c;
         }
@@ -61,15 +67,12 @@ section{
         }
         &__borderTop{
             border-top: 1px solid #FFF8EE33;
-            ;
         }
-        & &__title{
+        &__title{
             color: white;
-            font-size: 5vw;
         }
-        & &__titleDescription{
+        &__titleDescription{
             color: white;
-            font-size: 1vw;
         }
 
     }
@@ -77,44 +80,44 @@ section{
 .solutions{
     &__title{
         font-family: $pt;
-        font-size: 2.5vw;
-        text-align: center;
+        font-size: 28px;
+        // text-align: center;
         color: #333333;
     }
     &__text{
-        display: flex;
-        justify-content: center;
-        margin-top: 1.3vw;
+        // display: flex;
+        // justify-content: center;
+        // margin-top: 1.3vw;
         p{
-            max-width: 27vw;
-            text-align: center;
-            font-size: 1vw;
-            line-height: 1.6vw;  
+            // max-width: 27vw;
+            // text-align: center;
+            // font-size: 1vw;
+            // line-height: 1.6vw;  
         }
     }
     &__content{
-        margin: 3.6vw auto;
-        max-width: 59vw;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        grid-column-gap: 9.9vw;
+        // margin: 3.6vw auto;
+        // max-width: 59vw;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-around;
+        // grid-column-gap: 9.9vw;
     }
     &__item{
-        padding: 1vw;
-        display: flex;
-        max-width: 24.4vw;
-        grid-column-gap: 1vw;
-        align-items: center;
-        margin-bottom: 2.6vw;
+        // padding: 1vw;
+        // display: flex;
+        // max-width: 24.4vw;
+        // grid-column-gap: 1vw;
+        // align-items: center;
+        // margin-bottom: 2.6vw;
         &--title{
             font-family: $pt;
             color: $green;
-            font-size: 5vw;
-            line-height: 6vw;
+            // font-size: 5vw;
+            // line-height: 6vw;
         }
         &--titleDescription{
-            font-size: 0.9vw;
+            // font-size: 0.9vw;
             color:#333333DE;
             
         }

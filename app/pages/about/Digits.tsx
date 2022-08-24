@@ -56,12 +56,12 @@ const Digits = () => {
 
   return (
     <section className='digits'>
-      <p>МЫ В <span>ЦИФРАХ</span></p>
+      <p className='digits-heading'>МЫ В <span>ЦИФРАХ</span></p>
         <div className='digits-content'>
           {digitsData.map((item, index) => 
           <div key={index+'a'} className={index==0||index==1?"digits-item":'digits-item digits-item__borderTop'}>
             <p className='digits-item__title'>{item.title}</p>
-            <p className='digits-item__titleDescription'> {item.titleDescription}</p>
+            <p className='digits-item__titleDescription'>{item.titleDescription}</p>
             </div>
           )}
         </div>
