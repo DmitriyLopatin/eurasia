@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import ArrowLeft from '../../icons/ArrowLeft'
 
@@ -6,7 +7,7 @@ const BlogItem = () => {
         <section className='blogItem'>
             <div className='blogItem__container'>
                 <small>09.08.2022</small>
-                <span><ArrowLeft/> Назад</span>
+                <Link href='/blogs'><span><ArrowLeft/> Назад</span></Link>
                 <h1>Такой закон «О Зерне» нам не нужен</h1>
                 <img src="/assets/images/Blog.jpg" alt="" />
                 <p>На заседании Комитета по аграрным вопросам Региональной палаты предпринимателей Костанайской области обсудили новый законопроект «О зерне». Представители регионального совета, аграрии, уверены, что законопроект требует разъяснения, так как многие механизмы, заложенные в нем, необходимо адаптировать к нынешним реалиям.</p>

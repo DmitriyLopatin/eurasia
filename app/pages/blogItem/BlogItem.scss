@@ -1,11 +1,17 @@
 .blogItem{
-    position: relative;
     &__container{
+        padding: 0 16px;
+        position: relative;
         max-width: 960px;
         margin: 126px auto 450px;
         span{
+            cursor: pointer;
             position: absolute;
-            left: calc((100vw - 960px)/8);
+            left: calc(-100px - (100vw - 960px)/10);
+            @media(max-width:1250px){
+                left: 16px;
+                top: -60px;
+            }
             font-size: 14px;
             line-height: 16px;
             border-radius: 16px;
@@ -23,6 +29,10 @@
             font-family: $pt;
             font-size: 48px;
             line-height: 56px;
+            @media(max-width:576px){
+                font-size: 28px;
+                line-height: 36px;
+            }
         }
         p{
             font-size: 18px;
