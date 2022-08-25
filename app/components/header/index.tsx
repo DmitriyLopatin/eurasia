@@ -56,9 +56,9 @@ const Header = () => {
               <span onClick={() => setMenuShow(!menuShow)}><Close /></span>
             </p>
             <ul>
-              <Link href='/'><li>О КОМПАНИИ</li></Link>
+              <Link href='/about'><li>О КОМПАНИИ</li></Link>
               <Link href='/'><li>НАША МИССИЯ</li></Link>
-              <Link href='/'><li>ЧТО НОВОГО</li></Link>
+              <Link href='/blogs'><li>ЧТО НОВОГО</li></Link>
             </ul>
             <button className='c-btn c-btn-menu c-btn-outline-black'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button>
           </div>

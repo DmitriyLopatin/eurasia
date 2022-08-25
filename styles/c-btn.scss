@@ -12,6 +12,16 @@
     color: $green;
     border: 1px solid $green;
     transition: $transition;
+    &:hover{
+        background-color: $green;
+        color: white;
+        svg{
+            path{
+                fill: white;
+            }
+        }
+    
+    }
 }
 .c-btn-outline-black{
     background-color: transparent;

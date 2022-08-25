@@ -17,7 +17,7 @@ const Hero = () => {
                         <li>Grimme (Германия)</li>
                         <li>Väderstad (Швеция)</li>
                     </ul>
-                    <button className='c-btn c-btn-mobile'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button>
+                    <button className='c-btn c-btn-outline-green'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button>
                 </div>
                 <div className='img'><img src='assets/images/Hero.svg' alt="" /></div>
             </div>

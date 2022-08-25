@@ -91,6 +91,7 @@ header{
             list-style: none;
             margin-top: 20px;
            li{
+            cursor: pointer;
             padding: 20px 0;
             font-size: 20px;
             @media (max-width:400px){
@@ -116,7 +117,7 @@ header{
     &-close{
         padding-right: 24px;
         text-align: right;
-        &:hover{
+        & span :hover{
             cursor: pointer;
         }
     }
