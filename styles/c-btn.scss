@@ -1,8 +1,9 @@
 .c-btn {
-    text-align: center;
-    vertical-align: middle;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     border-radius: 50px;
     white-space: nowrap;
 }
@@ -22,4 +23,21 @@
     border-color: transparent;
     background-color: $green;
     color: white;
+}
+
+.c-btn-menu{
+    padding: 22px 40px;
+    font-size: 20px;
+    margin: 54px auto;
+    width: 320px;
+    @media(max-width:400px){
+        font-size: 15px;
+        padding: 10px 14px;
+        width: 220px;
+    }
+    svg{
+        path{
+            fill: $black
+        }
+    }
 }

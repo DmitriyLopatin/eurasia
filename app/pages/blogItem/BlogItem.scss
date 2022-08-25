@@ -1,0 +1,39 @@
+.blogItem{
+    position: relative;
+    &__container{
+        max-width: 960px;
+        margin: 126px auto 450px;
+        span{
+            position: absolute;
+            left: calc((100vw - 960px)/8);
+            font-size: 14px;
+            line-height: 16px;
+            border-radius: 16px;
+            background-color:  rgba(110, 182, 60, 0.1);
+            padding: 10px 13px;
+            display: flex;
+            gap:8px;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        h1{
+            margin: 8px 0 32px;
+            color: $black;
+            font-family: $pt;
+            font-size: 48px;
+            line-height: 56px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 30px;
+        }
+        img{
+            width: 100%;
+        }
+        p{
+            max-width: 620px;
+            margin: 20px auto;
+        }
+    }
+}
