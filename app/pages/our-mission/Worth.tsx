@@ -8,7 +8,7 @@ import Synergy from '../../icons/OurMission/Synergy'
 import Welfare from '../../icons/OurMission/Welfare'
 
 const Worth = () => {
-    const worthData = [
+    const worthData: any = [
         { id: 'a', img: <Star />, title: 'ГОЛОД К УСПЕХУ', titleDescription: 'Мы всегда амбициозны, страстны и энергичны в наших мечтах и достижениях' },
         { id: 'b', img: <Welfare />, title: 'ГОЛОД К УСПЕХУ', titleDescription: 'Любовь - это фундамент, на котором мы строим наш бизнес, отношения в команде, с клиентами и партнёрами' },
         { id: 'c', img: <Heart />, title: 'ГОЛОД К УСПЕХУ', titleDescription: 'Мы высокомотивированные на успех профессионалы, эксперты и консультанты, всегда готовы прийти на помощь и оказать поддержку' },
@@ -25,13 +25,14 @@ const Worth = () => {
                 <p className='worth-heading'>ЦЕННОСТИ</p>
                 <p className='worth-heading__text'>которые помогают выполнять нашу миссию</p>
                 <div className='worth-content'>
-                    {worthData.map((item, index) =>
+                    {worthData.map((item: any, index: number) =>
                         <div key={index + 'a'} className={index == 0 || index == 1 ? "worth-item" : 'worth-item worth-item__borderTop'}>
                             {item.img}
                             <p className='worth-item__title'>{item.title}</p>
                             <p className='worth-item__titleDescription'>{item.titleDescription}</p>
                         </div>
                     )}
+
                 </div>
         </section>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import Wrapper from '../../app/components/wrapper'
 import BlogsMAin from '../../app/pages/blogs/BlogsMAin'
 
-const Blogs = () => {
+const BlogsPage = () => {
   return (
     <Wrapper>
         <BlogsMAin/>
@@ -10,4 +10,4 @@ const Blogs = () => {
   )
 }
 
-export default Blogs
+export default BlogsPage

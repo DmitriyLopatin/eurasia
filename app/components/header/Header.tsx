@@ -18,7 +18,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'scroll'
+    !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'visible'
     if (languageShow) {
       window.addEventListener('click', handleLanguageMenu)
     }
@@ -28,7 +28,7 @@ const Header = () => {
   }, [languageShow])
 
   useEffect(() => {
-    !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'scroll'
+    !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'visible'
   }, [menuShow])
 
   return (
@@ -60,7 +60,7 @@ const Header = () => {
               <Link href='/our-mission'><li>НАША МИССИЯ</li></Link>
               <Link href='/blogs'><li>ЧТО НОВОГО</li></Link>
             </ul>
-            <button className='c-btn c-btn-menu c-btn-outline-black'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button>
+            <Link href='/contact-us'><button className='c-btn c-btn-menu c-btn-outline-black'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button></Link>
           </div>
           <div className='menu-footer'>
             <div className='menu-footer__socials'>

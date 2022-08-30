@@ -4,7 +4,7 @@ import Digits from '../../app/pages/about/Digits'
 import Hero from '../../app/pages/about/Hero'
 import Solutions from '../../app/pages/about/Solutions'
 
-const About = () => {
+const AboutPage = () => {
   return (
     <Wrapper>
         <Hero/>
@@ -14,4 +14,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutPage

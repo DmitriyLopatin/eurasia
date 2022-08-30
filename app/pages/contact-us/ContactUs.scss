@@ -1,0 +1,98 @@
+.contactUs {
+    padding: 0;
+    background-color: rgba(255, 248, 238, 1);
+    display: flex;
+    height: 100%;
+    // justify-content: space-between;
+    &__container{
+        width: 50%;
+        padding: 0 45px 0 30px;
+        display: flex;
+        align-items: center;
+    }
+    &__background{
+        background:  url("/assets/images/Contact-Us_bg.png") no-repeat center;
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        z-index: 0;
+        right: 0;
+        top: 0;
+    }
+    &__form {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        max-height: 576px;
+        margin: 0 auto;
+        h1{
+            font-size: 40px;
+            line-height: 48px;
+        }
+        @media (min-width:1401px) {
+            h1{
+                font-size: 48px;
+                line-height: 57px;
+            }
+            max-width: 675px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        input,
+        label {
+            @media (max-width:576px) {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            @media (min-width:577px) and (max-width:1160px) {
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+            @media (min-width:1161px) {
+                font-size: 18px;
+                line-height: 32px;
+
+            }
+        }
+    }
+
+    label {
+        color: $black;
+        font-weight: 500;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+        background-color: transparent;
+        outline: none;
+        color: $black;
+        &::placeholder {
+            color: rgba(51, 51, 51, 0.5);
+        }
+        padding: 8px 0;
+        margin: 4px 0;
+    }
+
+    button {
+        @media (max-width:576px) {
+            font-size: 14px;
+            padding: 12px 0;
+        }
+
+        @media (min-width:577px) {
+            font-size: 16px;
+            padding: 14px 0;
+        }
+    }
+
+}

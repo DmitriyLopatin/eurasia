@@ -27,6 +27,17 @@
     background-color: transparent;
     color: $black;
     border: 1px solid $black;
+    &:hover{
+        background-color: $black;
+        color: white;
+        transition: $transition;
+        svg{
+            path{
+                fill:white;
+                transition: $transition; 
+            }
+        }
+    }
 }
 
 .c-btn-filled-green{
@@ -50,4 +61,7 @@
             fill: $black
         }
     }
+}
+.c-btn-contactUs{
+    border-radius: 8px;
 }

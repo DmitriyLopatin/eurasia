@@ -3,7 +3,7 @@ import Wrapper from '../../app/components/wrapper'
 import OurMission from '../../app/pages/our-mission/Hero'
 import Worth from '../../app/pages/our-mission/Worth'
 
-const Mission = () => {
+const OurMissionPage = () => {
   return (
     <Wrapper>
      <OurMission/>
@@ -12,4 +12,4 @@ const Mission = () => {
   )
 }
 
-export default Mission
+export default OurMissionPage
