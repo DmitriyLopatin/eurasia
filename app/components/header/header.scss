@@ -1,4 +1,4 @@
-header{
+.header{
     padding: 24px 0px 26px;
     @media (max-width:1400px){
         padding: 15px 0px 15px;
@@ -7,8 +7,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
     z-index: 2;
+    &__border{
+       border-bottom: 1px solid rgba(51, 51, 51, 0.1); 
+    }
+    .header__contactUs{
+        display: flex;
+        gap: 24px;
+    }
     .language{
         width: 30px;
         height: 30px;
@@ -23,6 +29,10 @@ header{
         background: rgba(51, 51, 51, 0.1);
         &:hover{
             cursor: pointer;
+        }
+        &__contactUs{
+            color: rgba(255, 255, 255, 0.74);
+            
         }
     }
     .languageMenu{

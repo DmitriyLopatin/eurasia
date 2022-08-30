@@ -7,14 +7,13 @@ import InstaMenu from '../../icons/InstaMenu'
 import YoutubeMenu from '../../icons/YoutubeMenu'
 
 
-const Header = () => {
+const Header = ({isContact = false}) => {
   let [menuShow, setMenuShow] = useState(true)
   let [languageShow, setLanguageShow] = useState(false)
 
 
   function handleLanguageMenu() {
     setLanguageShow(!languageShow)
-    console.log('true')
   }
 
   useEffect(() => {
@@ -31,15 +30,20 @@ const Header = () => {
     !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'visible'
   }, [menuShow])
 
+  console.log(isContact)
+
   return (
     <>
-      <header>
-        <div className='burger-btn' onClick={() => setMenuShow(!menuShow)}>
-          <p></p>
-          <p></p>
+      <header className={!isContact?"header header__border":"header"}>
+        <div className='header__contactUs'>
+          <div className='burger-btn' onClick={() => setMenuShow(!menuShow)}>
+            <p></p>
+            <p></p>
+          </div>
+          {isContact?<Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link>:null}
         </div>
-        <Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link>
-        <span className='language' onClick={(e) => { setLanguageShow(!languageShow); e.stopPropagation() }}>
+        {!isContact?<Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link>:null}
+        <span className={!isContact?'language':'language language__contactUs'} onClick={(e) => { setLanguageShow(!languageShow); e.stopPropagation() }}>
           RU
         </span>
         <ul className={languageShow ? 'languageMenuShow' : 'languageMenu'}>

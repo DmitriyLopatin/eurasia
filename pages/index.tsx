@@ -3,7 +3,7 @@ import Wrapper from '../app/components/wrapper'
 
 const Home: NextPage = () => {
   return (
-    <Wrapper>
+    <Wrapper isContact>
       <h1 style={{
         textAlign:"center",
         marginTop:"10vw"

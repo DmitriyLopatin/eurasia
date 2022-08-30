@@ -16,7 +16,6 @@ const ContactUs = () => {
     console.log(data);
     reset();
   }
-
   return (
     <section className='contactUs'>
       <div className='contactUs__container'>

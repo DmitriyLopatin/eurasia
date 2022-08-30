@@ -1,4 +1,4 @@
-footer{
+.footer{
     font-family: 'Inter';
     @media (max-width:1400px){
         padding: 15px 0px 15px;
@@ -8,8 +8,10 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(51, 51, 51, 0.1);
     z-index: 2;
+    &__border{
+       border-top: 1px solid rgba(51, 51, 51, 0.1);
+     }
     p{
         font-size: 12px;
         font-weight: 500;
@@ -31,6 +33,16 @@ footer{
                 background-color:rgba(10, 41, 16, 0.74);
                 cursor: pointer;
                 transition: all 0.6s ease ;
+                & svg {
+                    path{
+                        fill: white
+                    }
+                }
+            }
+        }
+        &__contactUs{
+            span{
+                border:  1px solid rgba(255, 248, 238, 0.74);
                 & svg {
                     path{
                         fill: white

@@ -2,19 +2,19 @@ import React from 'react'
 import Footer from '../footer'
 import Header from '../header/Header'
 
-type Props ={
+interface Props  {
   children: React.ReactNode;
   title?: string;
-  isContac:boolean;
+  isContact: boolean;
 }
-// ReactNode, ReactElement, JSX.element
-const Wrapper: React.FC<Props> = ({children,isContact}) => {
-// const Wrapper = ({children, isContact}) => {
+
+const Wrapper: React.FC<Props> = ({ children, isContact}) => {
+  
   return (
       <>
-        <Header isContact/>
+        <Header isContact={isContact}/>
           {children}
-        <Footer />
+        <Footer isContact={isContact}/>
       </>
   )
 }
