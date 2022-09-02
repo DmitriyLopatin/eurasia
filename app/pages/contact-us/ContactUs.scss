@@ -1,32 +1,42 @@
 .contactUs {
     padding: 0;
     background-color: rgba(255, 248, 238, 1);
-    display: flex;
     height: 100%;
-    // justify-content: space-between;
+    display: flex;
+    align-items: center;
     &__container{
-        width: 50%;
-        padding: 0 45px 0 30px;
-        display: flex;
-        align-items: center;
-    }
-    &__background{
-        background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("/assets/images/Contact-Us_bg.png") no-repeat center, ;
-        width: 50%;
         height: 100%;
-        position: fixed;
-        z-index: 0;
-        right: 0;
-        top: 0;
+        width: 100%;
+        @media (min-width:1160px){
+            width: 50%;
+            padding: 0 45px 0 30px;
+        }
+    }
+    & &__background{
+        
+        @media(max-width:1160px){
+            button{
+                display: none;
+            }
+        }
+        @media (min-width:1160px){
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("/assets/images/Contact-Us_bg.png") no-repeat center;
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            z-index: 0;
+            right: 0;
+            top: 0;
+            
+        }
     }
     &__form {
         display: flex;
-        flex: 1;
         flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
-        max-height: 576px;
-        margin: 0 auto;
+        justify-content: space-between;
+        height: 576px;
+        max-width: 616px;
+        margin: 10px auto;
         h1{
             margin-top: 10px;
             font-size: 40px;
@@ -95,5 +105,6 @@
             padding: 14px 0;
         }
     }
+    
 
 }

@@ -11,6 +11,12 @@
     &__border{
        border-bottom: 1px solid rgba(51, 51, 51, 0.1); 
     }
+    button{
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+        padding: 10px 17px;
+    }
     .header__contactUs{
         display: flex;
         gap: 24px;

@@ -1,52 +1,69 @@
+import {yupResolver} from "@hookform/resolvers/yup"
+import { Pattern } from '@mui/icons-material';
 import { FormGroup, FormControlLabel, Checkbox } from '@mui/material';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import InputMask from 'react-input-mask'
+import Input from "../../components/input/Input";
+import { SendMessageSheme } from "../../constants/validation";
 
 
 type FormValues = {
   Name: string;
   email: string;
-  phoneNumber: string
+  phoneNumber: string;
 };
 
+
 const ContactUs = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({ mode: 'onBlur' })
+  
+  const { register, handleSubmit, reset, resetField, setFocus, formState, formState: { errors, isSubmitSuccessful } } = useForm<FormValues>({ 
+    mode: 'onBlur', 
+    resolver: yupResolver(SendMessageSheme) 
+  })
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    console.log(data.phoneNumber);
     reset();
   }
+
+ 
+  // useEffect(()=>{
+    // if (formState.isSubmitSuccessful) {
+      // reset({
+      // Name: '',
+      // phoneNumber: '',
+      // email: ''
+    // })
+    // setFocus('phoneNumber',{shouldSelect: true})
+  // }
+  // },[reset, formState, setFocus])
   return (
     <section className='contactUs'>
       <div className='contactUs__container'>
-        <form className='contactUs__form' onSubmit={handleSubmit(onSubmit)}>
+        <form className='contactUs__form' 
+        // onSubmit={handleSubmit(onSubmit)}
+        >
           <h1>СВЯЗАТЬСЯ С НАМИ</h1>
           <div>
             <label>Имя</label>
-            <input placeholder="Введите имя" {...register("Name", { required: 'Обязательное поле для ввода' })} />
+            <input placeholder="Введите имя" {...register("Name")} />
             {errors?.Name && (<p style={{ color: 'red' }}> {errors.Name.message}</p>)}
           </div>
           <div>
             <label>Email</label>
-            <input placeholder="Введите email"{...register("email", { required: 'Обязательное поле для ввода' },)} />
+            <input placeholder="Введите email"{...register("email")} />
             {errors?.email && (<p style={{ color: 'red' }}>{errors.email.message}</p>)}
           </div>
           <div>
             <label>Телефон</label>
+            {/* <Input {...register("phoneNumber")}/> */}
             <InputMask
               type='tel'
-              mask="+7\(999) 999-99-99"
+              mask="+7\ (999) 999-99-99"
               placeholder="+7 (___) ___-__-__"
-              // alwaysShowMask
-
-              {...register("phoneNumber", {
-                required: "Обязательное поле для ввода",
-                minLength: {
-                  value: 17,
-                  message: "Не полный номер телефона "
-
-                }
-              })} />
+              // onChange = {(event:React.ChangeEvent<HTMLInputElement>)=>console.log(event.target.value) }
+              {...register("phoneNumber")}
+              />
             {errors?.phoneNumber && <p style={{ color: 'red' }}>{errors?.phoneNumber?.message || "Error"}</p>}
           </div>
           <FormGroup>
@@ -56,7 +73,6 @@ const ContactUs = () => {
         </form>
       </div>
       <div className='contactUs__background'>
-        
       </div>
     </section>
   )
@@ -67,3 +83,4 @@ export default ContactUs
 
 
 
+//const {} = 

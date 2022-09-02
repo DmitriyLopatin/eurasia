@@ -5,7 +5,7 @@ import Header from '../header/Header'
 interface Props  {
   children: React.ReactNode;
   title?: string;
-  isContact: boolean;
+  isContact?: boolean;
 }
 
 const Wrapper: React.FC<Props> = ({ children, isContact}) => {

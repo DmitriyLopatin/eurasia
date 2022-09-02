@@ -1,6 +1,8 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {appWithTranslation} from 'next-i18next'
+import { GetServerSideProps } from 'next';
 
 const theme = createTheme({
   palette: {
@@ -16,5 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           </ThemeProvider>
 }
 
-export default MyApp
+export default appWithTranslation(MyApp) 
+
+export const getServerSideProps: GetServerSideProps = async (context)=>{
+  return {
+    props:{
+      cookies:context.req.cookies ?? ""
+    }
+  }
+}
 

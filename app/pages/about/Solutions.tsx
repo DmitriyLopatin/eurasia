@@ -1,6 +1,9 @@
 import React from 'react'
+import { EurasiaData } from '../../services/Services'
 
-const Solutions = () => {
+const Solutions = ({solutions}) => {
+  // EurasiaData.getAboutCompanySolutions().then(response=>console.log(response.data))
+  console.log(solutions)
   const solutionsData = [
     {
       title: '3,6',
@@ -31,10 +34,10 @@ const Solutions = () => {
           в сельском хозяйстве Казахстана и Кыргызстана</p>
       </div>
       <div  className='solutions__content'>
-        {solutionsData.map((item,index)=>
-        <div key={index+'b'} className='solutions__item'>
+        {solutions.map((item:any)=>
+        <div key={item.id} className='solutions__item'>
           <p className='solutions__item--title'>{item.title}</p>
-          <p className='solutions__item--titleDescription'>{item.titleDescription}</p>
+          <p className='solutions__item--titleDescription'>{item.subtitle}</p>
         </div>
         )}
       </div>

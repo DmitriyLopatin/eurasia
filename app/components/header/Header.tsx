@@ -1,20 +1,40 @@
+import ArrowLeft from '../../icons/ArrowLeft';
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import React, { SyntheticEvent, useEffect, useState, useTransition } from 'react'
+import { set } from 'react-hook-form'
 import ArrowUpSide from '../../icons/ArrowUpSide'
 import Close from '../../icons/Close'
 import FacebookMenu from '../../icons/FacebookMenu'
 import InstaMenu from '../../icons/InstaMenu'
 import YoutubeMenu from '../../icons/YoutubeMenu'
+import { useTranslation } from 'next-i18next'
 
 
-const Header = ({isContact = false}) => {
+const Header = ({ isContact = false }) => {
+  const { t, i18n } = useTranslation()
   let [menuShow, setMenuShow] = useState(true)
   let [languageShow, setLanguageShow] = useState(false)
-
+  const [headerContactUs, setHeaderContactUs] = useState(isContact)
+  let router = useRouter()
+  let {pathname, asPath,query} = router
 
   function handleLanguageMenu() {
     setLanguageShow(!languageShow)
   }
+  function changeLocale(lang: "ru" | "kz" | "en", event: SyntheticEvent) {
+    event.preventDefault()
+    router.push({pathname, query}, asPath, {locale: lang})
+  }
+  function getCurrentLanguge(lang: string) {
+    console.log(lang)
+    switch (lang) {
+      case 'ru': return 'RU'
+      case 'en': return 'EN'
+      case 'kz': return 'KZ'
+    }
+  }
+
 
   useEffect(() => {
     !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'visible'
@@ -30,26 +50,36 @@ const Header = ({isContact = false}) => {
     !menuShow ? document.body.style.overflow = 'hidden ' : document.body.style.overflow = 'visible'
   }, [menuShow])
 
-  console.log(isContact)
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 1160 && router.pathname.includes("/contact-us")) {
+        setHeaderContactUs(!headerContactUs)
+      } else if (window.innerWidth > 1160 && router.pathname.includes("/contact-us")) {
+        setHeaderContactUs(headerContactUs)
+      }
+    })
+  }, [])
 
+  console.log(isContact)
   return (
     <>
-      <header className={!isContact?"header header__border":"header"}>
+      <header className={!headerContactUs ? "header header__border" : "header"}>
         <div className='header__contactUs'>
           <div className='burger-btn' onClick={() => setMenuShow(!menuShow)}>
             <p></p>
             <p></p>
           </div>
-          {isContact?<Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link>:null}
+          {headerContactUs ? <Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link> : null}
         </div>
-        {!isContact?<Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link>:null}
-        <span className={!isContact?'language':'language language__contactUs'} onClick={(e) => { setLanguageShow(!languageShow); e.stopPropagation() }}>
-          RU
+        {!headerContactUs ? <Link href='/'><img src="/assets/images/Logo.svg" alt="" /></Link> : null}
+        {headerContactUs ? <Link href='/'><button className='c-btn c-btn-outline-white'><ArrowLeft /> НА ГЛАВНУЮ</button></Link> : null}
+        <span className={!headerContactUs ? 'language' : 'language language__contactUs'} onClick={(e) => { setLanguageShow(!languageShow); e.stopPropagation() }}>
+          {getCurrentLanguge(i18n.language)}
         </span>
         <ul className={languageShow ? 'languageMenuShow' : 'languageMenu'}>
-          <li>Қазақ тілі</li>
-          <li>English</li>
-          <li>Русский язык</li>
+          <li onClick={(e)=>changeLocale('kz', e)}>Қазақ тілі</li>
+          <li onClick={(e)=>changeLocale('en', e)}>English</li>
+          <li onClick={(e)=>changeLocale('ru', e)}>Русский язык</li>
         </ul>
       </header>
 

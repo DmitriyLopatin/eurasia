@@ -1,25 +1,21 @@
 import React from 'react'
 import ArrowUpSide from '../../icons/ArrowUpSide'
 
-const Hero = () => {
+
+const Hero = ({hero}) => {
+    // EurasiaData.getAboutCompanyHero().then(response=>console.log(response.data))
+    console.log(hero)
     return (
         <section className='hero'>
             <div className='hero-container'>
                 <div className='hero-text'>
                     <h1 >
-                        <span className='heading-first'>EURASIA</span>&#32;<span className='heading-second'>GROUP</span>
+                        <span className='heading-first'>{hero.title.split(' ')[0].toUpperCase()}</span>&#32;<span className='heading-second'>{hero.title.split(' ')[1].toUpperCase()}</span>
                     </h1>
-                    <p>Сегодня мы — единственная компания на казахстанском сельскохозяйственном рынке, которая уже более 20-ти лет с гордостью представляет лучшую технику от мировых лидеров, таких как:</p>
-                    <ul>
-                        <li>John Deere (США)</li>
-                        <li>Lindsay Irrigation (США)</li>
-                        <li>JCB (Великобритания)</li>
-                        <li>Grimme (Германия)</li>
-                        <li>Väderstad (Швеция)</li>
-                    </ul>
+                    <div dangerouslySetInnerHTML={{__html: hero.description}}/>
                     <button className='c-btn c-btn-outline-green'>СВЯЗАТЬСЯ С НАМИ <ArrowUpSide /></button>
                 </div>
-                <div className='img'><img src='assets/images/Hero.svg' alt="" /></div>
+                <div className='img'><img src={hero.image} alt="" /></div>
             </div>
         </section>
     )

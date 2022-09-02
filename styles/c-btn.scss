@@ -23,6 +23,27 @@
     
     }
 }
+.c-btn-outline-white{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: $transition;
+    svg{
+        path{
+            fill: white;
+        }
+    }
+    &:hover{
+        background-color: $green;
+        color: white;
+        svg{
+            path{
+                fill: white;
+            }
+        }
+    
+    }
+}
 .c-btn-outline-black{
     background-color: transparent;
     color: $black;
